@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorBase</item>
+        <item name="colorPrimaryDark">@color/colorBase</item>
+        <item name="colorAccent">@color/colorBase</item>
+    </style>
+
+    <!--给启动的activity设置一个背景主题，这样可以消除启动时候的白色背景-->
+    <style name="AppWelcomeTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@mipmap/welcome</item>
+    </style>
+</resources>
