@@ -10,11 +10,11 @@ public class CustomDeliverProduct {
 	@JSONField(ordinal = 1)
 	private int id;
 	@JSONField(ordinal = 2)
-	private int deliverId; // 交付计划id
+	private int planId; // 交付计划id
 	@JSONField(ordinal = 3)
 	private int productId; // 成品id
 	@JSONField(ordinal = 4)
-	private int deliverNum; // 交付数量
+	private int num; // 交付数量
 
 	@JSONField(ordinal = 5)
 	private Product product;
@@ -23,10 +23,10 @@ public class CustomDeliverProduct {
 
 	}
 
-	public CustomDeliverProduct(int deliverId, int productId, int deliverNum) {
-		this.deliverId = deliverId;
+	public CustomDeliverProduct(int planId, int productId, int num) {
+		this.planId = planId;
 		this.productId = productId;
-		this.deliverNum = deliverNum;
+		this.num = num;
 	}
 
 	public int getId() {
@@ -37,12 +37,12 @@ public class CustomDeliverProduct {
 		this.id = id;
 	}
 
-	public int getDeliverId() {
-		return deliverId;
+	public int getPlanId() {
+		return planId;
 	}
 
-	public void setDeliverId(int deliverId) {
-		this.deliverId = deliverId;
+	public void setPlanId(int planId) {
+		this.planId = planId;
 	}
 
 	public int getProductId() {
@@ -53,12 +53,12 @@ public class CustomDeliverProduct {
 		this.productId = productId;
 	}
 
-	public int getDeliverNum() {
-		return deliverNum;
+	public int getNum() {
+		return num;
 	}
 
-	public void setDeliverNum(int deliverNum) {
-		this.deliverNum = deliverNum;
+	public void setNum(int num) {
+		this.num = num;
 	}
 
 	public Product getProduct() {

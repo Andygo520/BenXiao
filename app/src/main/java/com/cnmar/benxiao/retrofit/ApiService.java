@@ -54,6 +54,16 @@ public interface ApiService {
     );
 
     /*
+  *  系统用户列表
+  * */
+    @GET("/system_user/list")
+    Observable<BaseModel<ArrayList<SystemUser>>> systemUser(
+            @Query("query.name") String query,
+            @Query("page.num") int page,
+            @Query("token") String token
+    );
+
+    /*
    *  操作日志
    * */
     @GET("/system_log/list")
@@ -97,6 +107,7 @@ public interface ApiService {
     @GET("/material_in_order/list")
     Observable<BaseModel<ArrayList<MaterialInOrder>>> materialInOrder(
             @Query("query.code") String query,
+            @Query("query.status") String status,
             @Query("page.num") int page,
             @Query("token") String token
     );

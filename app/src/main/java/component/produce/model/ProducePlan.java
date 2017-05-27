@@ -1,9 +1,9 @@
 package component.produce.model;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.Date;
 import java.util.List;
+
+import com.alibaba.fastjson.annotation.JSONField;
 
 import component.com.model.ComBox;
 import component.common.model.BaseModel;

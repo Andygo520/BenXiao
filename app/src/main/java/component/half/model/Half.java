@@ -1,8 +1,8 @@
 package component.half.model;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.List;
+
+import com.alibaba.fastjson.annotation.JSONField;
 
 import component.basic.model.Unit;
 import component.basic.vo.MixTypeVo;
@@ -36,9 +36,9 @@ public class Half extends BaseModel {
 	@JSONField(ordinal = 10)
 	private int packNum; // 包装数量
 	@JSONField(ordinal = 11)
-	private int minStock; // 预警最小库存
+	private int minStock; // 最小库存
 	@JSONField(ordinal = 12)
-	private int maxStock; // 预警最大库存
+	private int maxStock; // 最大库存
 
 	@JSONField(ordinal = 13)
 	private Unit unit;

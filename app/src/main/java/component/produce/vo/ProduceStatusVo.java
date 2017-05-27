@@ -1,5 +1,7 @@
 package component.produce.vo;
 
+import component.produce.vo.ProduceStatusVo;
+
 /** 生产状态 */
 public enum ProduceStatusVo {
 

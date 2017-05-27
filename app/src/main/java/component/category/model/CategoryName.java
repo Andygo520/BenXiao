@@ -1,8 +1,8 @@
 package component.category.model;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.List;
+
+import com.alibaba.fastjson.annotation.JSONField;
 
 import component.category.vo.NameTypeVo;
 

@@ -1,11 +1,14 @@
 package component.com.model;
 
+import java.io.Serializable;
+
 import com.alibaba.fastjson.annotation.JSONField;
 
 import component.com.vo.ToolTypeVo;
 
 /** 工装 */
-public class ComTool {
+@SuppressWarnings("serial")
+public class ComTool implements Serializable {
 
 	@JSONField(ordinal = 1)
 	private int id;

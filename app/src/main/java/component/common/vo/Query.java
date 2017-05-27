@@ -1,8 +1,8 @@
 package component.common.vo;
 
-import org.apache.commons.lang.StringUtils;
-
 import java.util.Date;
+
+import org.apache.commons.lang.StringUtils;
 
 public class Query implements Cloneable {
 
@@ -23,6 +23,7 @@ public class Query implements Cloneable {
 	private Integer categoryId;
 	private Integer deptId;
 	private Integer userId;
+	private Integer auditStatus;
 
 	private Date sdate;
 	private Date edate;
@@ -154,6 +155,14 @@ public class Query implements Cloneable {
 
 	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+
+	public Integer getAuditStatus() {
+		return auditStatus;
+	}
+
+	public void setAuditStatus(Integer auditStatus) {
+		this.auditStatus = auditStatus;
 	}
 
 	public Date getSdate() {

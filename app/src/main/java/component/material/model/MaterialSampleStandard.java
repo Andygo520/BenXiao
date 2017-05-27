@@ -1,8 +1,8 @@
 package component.material.model;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.Date;
+
+import com.alibaba.fastjson.annotation.JSONField;
 
 import component.common.model.BaseModel;
 

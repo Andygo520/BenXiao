@@ -1,6 +1,7 @@
 package com.cnmar.benxiao.retrofit;
 
 
+import com.cnmar.benxiao.utils.UniversalHelper;
 import com.cnmar.benxiao.utils.UrlHelper;
 
 import okhttp3.OkHttpClient;
@@ -23,7 +24,7 @@ public class Api {
             OkHttpClient client = new OkHttpClient.Builder().addInterceptor(logging).build();
             SERVICE = new Retrofit.Builder()
                     .baseUrl(UrlHelper.URL_BASE)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(UniversalHelper.buildGson()))
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .client(client)
                     .build().create(ApiService.class);

@@ -1,8 +1,8 @@
 package component.process.model;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.List;
+
+import com.alibaba.fastjson.annotation.JSONField;
 
 import component.com.model.ComStation;
 import component.com.model.ComTeam;

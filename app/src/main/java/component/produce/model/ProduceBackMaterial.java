@@ -1,7 +1,6 @@
 package component.produce.model;
 
 import com.alibaba.fastjson.annotation.JSONField;
-
 import component.material.model.Material;
 import component.material.model.MaterialSpace;
 

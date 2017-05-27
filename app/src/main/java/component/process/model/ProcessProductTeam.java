@@ -1,7 +1,10 @@
 package component.process.model;
 
+import java.io.Serializable;
+
 /** 成品工序-班组 */
-public class ProcessProductTeam {
+@SuppressWarnings("serial")
+public class ProcessProductTeam implements Serializable {
 
 	private int id;
 	private int processId;

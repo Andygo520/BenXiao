@@ -11,6 +11,8 @@ public enum LogModuleVo {
 	system_role("system_role", "角色"),
 	/** 菜单 */
 	system_menu("system_menu", "菜单"),
+	/** APP菜单 */
+	system_app_menu("system_app_menu", "APP菜单"),
 	/** 权限 */
 	system_auth("system_auth", "权限"),
 	/** 单位 */
@@ -22,6 +24,9 @@ public enum LogModuleVo {
 	company("company", "企业"),
 	/** 产品 */
 	company_product("company_product", "产品"),
+
+	/** 客户 */
+	custom("custom", "客户"),
 
 	/** 供应商 */
 	supply("supply", "供应商"),

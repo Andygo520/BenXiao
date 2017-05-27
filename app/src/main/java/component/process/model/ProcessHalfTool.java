@@ -1,7 +1,10 @@
 package component.process.model;
 
+import java.io.Serializable;
+
 /** 半成品工序-工装 */
-public class ProcessHalfTool {
+@SuppressWarnings("serial")
+public class ProcessHalfTool implements Serializable {
 
 	private int id;
 	private int processId;

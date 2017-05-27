@@ -1,12 +1,15 @@
 package component.com.model;
 
+import java.io.Serializable;
+
 import com.alibaba.fastjson.annotation.JSONField;
 
 import component.produce.model.ProduceBom;
 import component.produce.model.ProducePlan;
 
 /** 机台工位 */
-public class ComStation implements Cloneable {
+@SuppressWarnings("serial")
+public class ComStation implements Serializable, Cloneable {
 
 	@JSONField(ordinal = 1)
 	private int id;

@@ -1,8 +1,8 @@
 package component.material.model;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.List;
+
+import com.alibaba.fastjson.annotation.JSONField;
 
 /** 出库单原料关系 */
 public class MaterialOutOrderMaterial {

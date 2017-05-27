@@ -1,8 +1,8 @@
 package component.produce.model;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.Date;
+
+import com.alibaba.fastjson.annotation.JSONField;
 
 import component.half.model.HalfInOrder;
 import component.system.model.SystemUser;

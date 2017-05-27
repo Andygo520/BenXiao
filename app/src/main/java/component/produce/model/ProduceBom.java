@@ -1,8 +1,8 @@
 package component.produce.model;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.List;
+
+import com.alibaba.fastjson.annotation.JSONField;
 
 import component.com.model.ComBox;
 import component.half.model.Half;

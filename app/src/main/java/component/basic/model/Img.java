@@ -1,8 +1,8 @@
 package component.basic.model;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.Date;
+
+import com.alibaba.fastjson.annotation.JSONField;
 
 /** 图片 */
 public class Img {

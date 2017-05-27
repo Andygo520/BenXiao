@@ -1,8 +1,8 @@
 package component.product.model;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.List;
+
+import com.alibaba.fastjson.annotation.JSONField;
 
 /** 成品库存 */
 public class ProductStock {

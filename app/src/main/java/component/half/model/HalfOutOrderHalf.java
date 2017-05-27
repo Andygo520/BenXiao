@@ -1,8 +1,8 @@
 package component.half.model;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.List;
+
+import com.alibaba.fastjson.annotation.JSONField;
 
 /** 出库单半成品关系 */
 public class HalfOutOrderHalf {

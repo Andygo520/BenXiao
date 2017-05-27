@@ -22,7 +22,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".activity.WelcomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppWelcomeTheme">
             <intent-filter>
@@ -32,12 +32,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name=".LoginActivity"
-            android:screenOrientation="portrait"></activity>
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.SystemManageActivity"></activity>
     </application>
 
 </manifest>

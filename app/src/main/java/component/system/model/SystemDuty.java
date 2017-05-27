@@ -1,7 +1,6 @@
 package component.system.model;
 
 import com.alibaba.fastjson.annotation.JSONField;
-
 import component.common.model.BaseModel;
 
 /** 职务 */

@@ -2,6 +2,7 @@ package component.system.model;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -10,7 +11,8 @@ import component.common.vo.IsEnableVo;
 import component.system.vo.GenderVo;
 
 /** 用户 */
-public class SystemUser extends ImgModel {
+@SuppressWarnings("serial")
+public class SystemUser extends ImgModel implements Serializable {
 
 	@JSONField(ordinal = 1)
 	private int deptId;
@@ -44,7 +46,7 @@ public class SystemUser extends ImgModel {
 	@JSONField(ordinal = 15)
 	private List<SystemRole> roles;
 	@JSONField(ordinal = 16)
-	private List<SystemMenu> menus;
+	private List<SystemAppMenu> appMenus;
 	@JSONField(ordinal = 17)
 	private SystemDept dept;
 	@JSONField(ordinal = 18)
@@ -195,12 +197,12 @@ public class SystemUser extends ImgModel {
 		this.roles = roles;
 	}
 
-	public List<SystemMenu> getMenus() {
-		return menus;
+	public List<SystemAppMenu> getAppMenus() {
+		return appMenus;
 	}
 
-	public void setMenus(List<SystemMenu> menus) {
-		this.menus = menus;
+	public void setAppMenus(List<SystemAppMenu> appMenus) {
+		this.appMenus = appMenus;
 	}
 
 	public SystemDept getDept() {
