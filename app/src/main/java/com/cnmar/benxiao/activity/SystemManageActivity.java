@@ -14,7 +14,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.cnmar.benxiao.R;
-import com.cnmar.benxiao.fragment.MaterialInOrderFragment;
+import com.cnmar.benxiao.fragment.SystemLogFragment;
 import com.cnmar.benxiao.fragment.SystemUserFragment;
 import com.cnmar.benxiao.utils.ACache;
 
@@ -25,9 +25,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SystemManageActivity extends AppCompatActivity {
-//    private inOrderFragment inOrderFragment;
     private SystemUserFragment systemUserFragment;
-    private MaterialInOrderFragment inOrderFragment;
+    private SystemLogFragment systemLogFragment;
     @BindView(R.id.left_arrow)
     LinearLayout leftArrow;
     @BindView(R.id.title)
@@ -100,8 +99,8 @@ public class SystemManageActivity extends AppCompatActivity {
     @Override
     public void onAttachFragment(Fragment fragment) {
         super.onAttachFragment(fragment);
-        if (inOrderFragment == null && fragment instanceof MaterialInOrderFragment) {
-            inOrderFragment = (MaterialInOrderFragment) fragment;
+        if (systemLogFragment == null && fragment instanceof SystemLogFragment) {
+            systemLogFragment = (SystemLogFragment) fragment;
         } else if (systemUserFragment == null && fragment instanceof SystemUserFragment) {
             systemUserFragment = (SystemUserFragment) fragment;
         }
@@ -147,11 +146,11 @@ public class SystemManageActivity extends AppCompatActivity {
                 drawable4.setBounds(0, 15, 70, 85);//第一0是距左边距离，第二15是距上边距离，长宽为70
                 rb1.setCompoundDrawables(null, drawable3, null, null);//只放上边
                 rb2.setCompoundDrawables(null, drawable4, null, null);//只放上边
-                if (inOrderFragment == null) {
-                    inOrderFragment = new MaterialInOrderFragment();
-                    transaction.add(R.id.content, inOrderFragment);
+                if (systemLogFragment == null) {
+                    systemLogFragment = new SystemLogFragment();
+                    transaction.add(R.id.content, systemLogFragment);
                 } else {
-                    transaction.show(inOrderFragment);
+                    transaction.show(systemLogFragment);
                 }
                 break;
         }
@@ -164,8 +163,8 @@ public class SystemManageActivity extends AppCompatActivity {
      * @param transaction 用于对Fragment执行操作的事务
      */
     private void hideFragment(FragmentTransaction transaction) {
-        if (inOrderFragment != null) {
-            transaction.hide(inOrderFragment);
+        if (systemLogFragment != null) {
+            transaction.hide(systemLogFragment);
         }
         if (systemUserFragment != null) {
             transaction.hide(systemUserFragment);

@@ -4,8 +4,6 @@ import android.content.Context;
 
 import com.cnmar.benxiao.R;
 import com.cnmar.benxiao.widget.CustomDialog;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 import com.lcodecore.tkrefreshlayout.footer.LoadingView;
 import com.lcodecore.tkrefreshlayout.header.progresslayout.ProgressLayout;
@@ -117,15 +115,5 @@ public class UniversalHelper {
             e.printStackTrace();
         }
         return utf8String;
-    }
-
-    public static Gson buildGson() {
-        Gson gson=new Gson();
-        if (gson == null) {
-            gson = new GsonBuilder()
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss")
-                    .create();
-        }
-        return gson;
     }
 }

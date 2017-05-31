@@ -7,7 +7,6 @@ import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,8 +32,6 @@ import com.cnmar.benxiao.widget.MyListView;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -140,11 +137,6 @@ public class SystemUserFragment extends Fragment {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_UP) {
                     String input = etSearchInput.getText().toString().trim();
-                    try {
-                        input = URLEncoder.encode(input, "utf-8");
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
                     if (input.equals("")) {
                         Toast.makeText(getActivity(), R.string.before_search_please_input, Toast.LENGTH_SHORT).show();
                     } else {
@@ -255,11 +247,6 @@ public class SystemUserFragment extends Fragment {
                 if (input.equals("")) {
                     Toast.makeText(getActivity(), R.string.before_search_please_input, Toast.LENGTH_SHORT).show();
                     return;
-                }
-                try {
-                    input = URLEncoder.encode(input, "utf-8");
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
                 }
                 getUserListFromNet(input, page);
                 break;

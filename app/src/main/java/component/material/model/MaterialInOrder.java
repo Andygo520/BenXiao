@@ -2,6 +2,7 @@ package component.material.model;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
+import java.util.Date;
 import java.util.List;
 
 import component.common.model.BaseModel;
@@ -17,11 +18,11 @@ public class MaterialInOrder extends BaseModel {
 	@JSONField(ordinal = 2)
 	private String code; // 入库单号
 	@JSONField(ordinal = 3, format = "yyyyMMddHHmmss")
-	private String inTime; // 入库时间
+	private Date inTime; // 入库时间
 	@JSONField(ordinal = 4)
 	private String purchaseOrder; // 采购订单号
 	@JSONField(ordinal = 5, format = "yyyy-MM-dd")
-	private String arrivalDate; // 到货日期
+	private Date arrivalDate; // 到货日期
 	@JSONField(ordinal = 6)
 	private String remark; // 备注
 	@JSONField(ordinal = 7)
@@ -29,7 +30,7 @@ public class MaterialInOrder extends BaseModel {
 	@JSONField(ordinal = 8)
 	private int testId;
 	@JSONField(ordinal = 9, format = "yyyy-MM-dd HH:mm:ss")
-	private String testTime;
+	private Date testTime;
 	@JSONField(ordinal = 10)
 	private String testRemark; // 检验备注
 
@@ -60,11 +61,11 @@ public class MaterialInOrder extends BaseModel {
 		this.code = code;
 	}
 
-	public String getInTime() {
+	public Date getInTime() {
 		return inTime;
 	}
 
-	public void setInTime(String inTime) {
+	public void setInTime(Date inTime) {
 		this.inTime = inTime;
 	}
 
@@ -76,11 +77,11 @@ public class MaterialInOrder extends BaseModel {
 		this.purchaseOrder = purchaseOrder;
 	}
 
-	public String getArrivalDate() {
+	public Date getArrivalDate() {
 		return arrivalDate;
 	}
 
-	public void setArrivalDate(String arrivalDate) {
+	public void setArrivalDate(Date arrivalDate) {
 		this.arrivalDate = arrivalDate;
 	}
 
@@ -108,11 +109,11 @@ public class MaterialInOrder extends BaseModel {
 		this.testId = testId;
 	}
 
-	public String getTestTime() {
+	public Date getTestTime() {
 		return testTime;
 	}
 
-	public void setTestTime(String testTime) {
+	public void setTestTime(Date testTime) {
 		this.testTime = testTime;
 	}
 

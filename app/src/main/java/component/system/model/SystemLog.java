@@ -19,7 +19,7 @@ public class SystemLog {
 	private String module;
 	@JSONField(ordinal = 5)
 	private String content;
-	@JSONField(ordinal = 6, format = "yyyy-MM-dd HH:mm:ss")
+	@JSONField(ordinal = 6, format = "yyyy-MM-dd")
 	private Date ctime;
 
 	public SystemLog() {

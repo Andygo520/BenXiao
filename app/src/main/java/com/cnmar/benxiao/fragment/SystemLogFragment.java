@@ -33,8 +33,6 @@ import com.cnmar.benxiao.widget.MyListView;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -139,11 +137,6 @@ public class SystemLogFragment extends Fragment {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_UP) {
                     String input = etSearchInput.getText().toString().trim();
-                    try {
-                        input = URLEncoder.encode(input, "utf-8");
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
                     if (input.equals("")) {
                         Toast.makeText(getActivity(), R.string.before_search_please_input, Toast.LENGTH_SHORT).show();
                     } else {
@@ -196,7 +189,7 @@ public class SystemLogFragment extends Fragment {
 
     public void getLogListFromNet(String query, int page) {
         String token = UniversalHelper.getToken(_Url.SYSTEM_LOG);
-        Log.d("ssssss",token);
+        Log.d("ssssss",query);
         Api.getDefault().systemLog(query, page, token)
                 .doOnNext(new Action1<BaseModel<ArrayList<SystemLog>>>() {
                     @Override
@@ -230,7 +223,6 @@ public class SystemLogFragment extends Fragment {
 
                     @Override
                     protected void _onError(String message) {
-                        Log.d("ssssss",message);
                         ToastUtil.showToast(getActivity(), message);
                     }
 
@@ -256,11 +248,6 @@ public class SystemLogFragment extends Fragment {
                 if (input.equals("")) {
                     Toast.makeText(getActivity(), R.string.before_search_please_input, Toast.LENGTH_SHORT).show();
                     return;
-                }
-                try {
-                    input = URLEncoder.encode(input, "utf-8");
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
                 }
                 getLogListFromNet(input, 1);
                 break;

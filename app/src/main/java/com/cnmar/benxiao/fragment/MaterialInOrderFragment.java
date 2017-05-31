@@ -106,7 +106,7 @@ public class MaterialInOrderFragment extends Fragment {
         map.put(status[5], InOrderStatusVo.pre_test.getKey());
         map.put(status[6], InOrderStatusVo.test_fail.getKey());
         init();
-        getInOrderListFromNet("","",1);
+        getInOrderListFromNet("", "", 1);
         return view;
     }
 
@@ -131,7 +131,7 @@ public class MaterialInOrderFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                getInOrderListFromNet("",String.valueOf(map.get(status[position])),1);
+                getInOrderListFromNet("", String.valueOf(map.get(status[position])), 1);
             }
 
             @Override
@@ -148,7 +148,7 @@ public class MaterialInOrderFragment extends Fragment {
                     public void run() {
 //                      下拉刷新默认显示第一页（10条）内容
                         page = 1;
-                        getInOrderListFromNet("","",page);
+                        getInOrderListFromNet("", "", page);
                         refreshLayout.finishRefreshing();
                     }
                 }, 400);
@@ -162,13 +162,13 @@ public class MaterialInOrderFragment extends Fragment {
                         page++;
 //                            当page等于总页数的时候，提示“加载完成”
                         if (page == total) {
-                            getInOrderListFromNet("","",page);
-                            Toast.makeText(getActivity(),R.string.finish_load_more , Toast.LENGTH_SHORT).show();
+                            getInOrderListFromNet("", "", page);
+                            Toast.makeText(getActivity(), R.string.finish_load_more, Toast.LENGTH_SHORT).show();
                             // 结束上拉刷新...
                             refreshLayout.finishLoadmore();
                             return;
                         }
-                        getInOrderListFromNet("","",page);
+                        getInOrderListFromNet("", "", page);
                         Toast.makeText(getActivity(), R.string.load_more, Toast.LENGTH_SHORT).show();
                         // 结束上拉刷新...
                         refreshLayout.finishLoadmore();
@@ -184,7 +184,7 @@ public class MaterialInOrderFragment extends Fragment {
                     if (input.equals("")) {
                         Toast.makeText(getActivity(), R.string.before_search_please_input, Toast.LENGTH_SHORT).show();
                     } else {
-                        getInOrderListFromNet(input,"",1);
+                        getInOrderListFromNet(input, "", 1);
                     }
                     InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                     if (imm.isActive()) {
@@ -211,7 +211,7 @@ public class MaterialInOrderFragment extends Fragment {
             public void afterTextChanged(Editable s) {
                 if (s.toString().equals("")) {
                     ivDelete.setVisibility(View.GONE);
-                    getInOrderListFromNet("","",1);
+                    getInOrderListFromNet("", "", 1);
                 } else {
                     ivDelete.setVisibility(View.VISIBLE);
                 }
@@ -227,23 +227,23 @@ public class MaterialInOrderFragment extends Fragment {
         super.onHiddenChanged(hidden);
 //        Fragment重新显示到最前端中
         if (!hidden) {
-            getInOrderListFromNet("","",1);
+            getInOrderListFromNet("", "", 1);
         }
     }
 
-    public void getInOrderListFromNet(String query,String status,int page) {
-        String token=UniversalHelper.getToken(_Url.MATERIAL_IN_ORDER);
-        Api.getDefault().materialInOrder(query,status,page,token)
-                    .doOnNext(new Action1<BaseModel<ArrayList<MaterialInOrder>>>() {
-                        @Override
-                        public void call(BaseModel<ArrayList<MaterialInOrder>> response) {
-                            count = response.getPage().getCount();
-                            total = response.getPage().getTotal();
-                            num = response.getPage().getNum();
-                        }
-                    })
-                            .compose(RxHelper.<ArrayList<MaterialInOrder>>handleResult())
-                            .subscribe(new RxSubscriber<ArrayList<MaterialInOrder>>(getActivity()) {
+    public void getInOrderListFromNet(String query, String status, int page) {
+        String token = UniversalHelper.getToken(_Url.MATERIAL_IN_ORDER);
+        Api.getDefault().materialInOrder(query, status, page, token)
+                .doOnNext(new Action1<BaseModel<ArrayList<MaterialInOrder>>>() {
+                    @Override
+                    public void call(BaseModel<ArrayList<MaterialInOrder>> response) {
+                        count = response.getPage().getCount();
+                        total = response.getPage().getTotal();
+                        num = response.getPage().getNum();
+                    }
+                })
+                .compose(RxHelper.<ArrayList<MaterialInOrder>>handleResult())
+                .subscribe(new RxSubscriber<ArrayList<MaterialInOrder>>(getActivity()) {
                     @Override
                     protected void _onNext(ArrayList<MaterialInOrder> materialInOrders) {
                         //      数据小于10条或者当前页为最后一页就设置不能上拉加载更多
@@ -266,7 +266,12 @@ public class MaterialInOrderFragment extends Fragment {
 
                     @Override
                     protected void _onError(String message) {
-                        ToastUtil.showToast(getActivity(),message);
+                        ToastUtil.showToast(getActivity(), message);
+                    }
+
+                    @Override
+                    protected boolean showDialog() {
+                        return false;
                     }
                 });
     }
@@ -287,7 +292,7 @@ public class MaterialInOrderFragment extends Fragment {
                     Toast.makeText(getActivity(), R.string.before_search_please_input, Toast.LENGTH_SHORT).show();
                     return;
                 }
-                getInOrderListFromNet(input,"",1);
+                getInOrderListFromNet(input, "", 1);
                 break;
         }
     }
@@ -337,7 +342,7 @@ public class MaterialInOrderFragment extends Fragment {
                 holder.column2.setText("");
 
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            holder.column3.setText(list.get(position).getArrivalDate());
+            holder.column3.setText(sdf.format(list.get(position).getArrivalDate()));
             holder.column4.setText(list.get(position).getInOrderStatusVo().getValue());
             holder.column1.setTextColor(getResources().getColor(R.color.colorBase));
             holder.column1.setOnClickListener(new View.OnClickListener() {
