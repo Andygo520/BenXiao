@@ -107,6 +107,7 @@
 
                             <TextView
                                 android:id="@+id/tv21"
+                                android:autoLink="phone"
                                 android:layout_width="35dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -229,6 +230,7 @@
 
                             <TextView
                                 android:id="@+id/tv51"
+                                android:autoLink="phone"
                                 android:layout_width="35dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -241,7 +243,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:padding="2dip"
-                                android:text="@string/mailbox"
+                                android:text="@string/email"
                                 android:textColor="@android:color/black"
                                 android:textStyle="bold" />
 

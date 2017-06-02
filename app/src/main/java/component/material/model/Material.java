@@ -5,7 +5,6 @@ import java.util.List;
 import com.alibaba.fastjson.annotation.JSONField;
 
 import component.basic.model.Unit;
-import component.basic.vo.MixTypeVo;
 import component.basic.vo.PackTypeVo;
 import component.basic.vo.StockTypeVo;
 import component.category.model.Category;
@@ -31,10 +30,8 @@ public class Material extends BaseModel {
 	private String remark; // 备注
 	@JSONField(ordinal = 8)
 	private int stockType; // 出入库操作 - 1扫描二维码2输入数量
-	@JSONField(ordinal = 9)
-	private int mixType; // 不同批次混仓 - 1不允许2允许
 	@JSONField(ordinal = 10)
-	private int packType; // 包装类型 - 1袋装2装箱3捆包4捆扎5料框
+	private int packType; // 包装类型
 	@JSONField(ordinal = 11)
 	private int packNum; // 包装数量
 	@JSONField(ordinal = 12)
@@ -117,14 +114,6 @@ public class Material extends BaseModel {
 
 	public void setStockType(int stockType) {
 		this.stockType = stockType;
-	}
-
-	public int getMixType() {
-		return mixType;
-	}
-
-	public void setMixType(int mixType) {
-		this.mixType = mixType;
 	}
 
 	public int getPackType() {
@@ -210,11 +199,6 @@ public class Material extends BaseModel {
 	@JSONField(serialize = false)
 	public StockTypeVo getStockTypeVo() {
 		return StockTypeVo.getInstance(stockType);
-	}
-
-	@JSONField(serialize = false)
-	public MixTypeVo getMixTypeVo() {
-		return MixTypeVo.getInstance(mixType);
 	}
 
 	@JSONField(serialize = false)

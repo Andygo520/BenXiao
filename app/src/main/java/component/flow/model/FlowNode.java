@@ -1,5 +1,11 @@
 package component.flow.model;
 
+import java.util.List;
+
+import com.alibaba.fastjson.annotation.JSONField;
+
+import component.system.model.SystemUser;
+
 /** 节点 */
 public class FlowNode {
 
@@ -8,6 +14,11 @@ public class FlowNode {
 	private String name; // 名称
 	private int seq;
 	private Boolean isDel;
+
+	@JSONField(serialize = false)
+	private List<FlowField> fields;
+	@JSONField(serialize = false)
+	private List<SystemUser> users;
 
 	public int getId() {
 		return id;
@@ -47,6 +58,22 @@ public class FlowNode {
 
 	public void setIsDel(Boolean isDel) {
 		this.isDel = isDel;
+	}
+
+	public List<FlowField> getFields() {
+		return fields;
+	}
+
+	public void setFields(List<FlowField> fields) {
+		this.fields = fields;
+	}
+
+	public List<SystemUser> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<SystemUser> users) {
+		this.users = users;
 	}
 
 }

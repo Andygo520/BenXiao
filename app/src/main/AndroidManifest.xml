@@ -37,10 +37,18 @@
         <activity
             android:name=".activity.LoginActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.SystemManageActivity"></activity>
-        <activity android:name=".activity.SystemUserDetailActivity" />
-        <activity android:name=".activity.SupplyManageActivity" />
-        <activity android:name=".activity.SupplyManageDetailActivity" />
+        <activity
+            android:name=".activity.SystemManageActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.SystemUserDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SupplyManageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SupplyManageDetailActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

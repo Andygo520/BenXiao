@@ -176,13 +176,13 @@
     <string name="phone">电话</string>
     <string name="contact">联系人</string>
     <string name="supply_management">供应商管理</string>
-    <string name="search_by_supply_name">供应商名称查询</string>
+    <string name="search_by_supply_code">供应商编码查询</string>
     <string name="supply_detail">供应商详情</string>
     <string name="tax">传真</string>
     <string name="address">地址</string>
     <string name="position">职位</string>
     <string name="mobile">手机号</string>
-    <string name="mailbox">邮箱</string>
+    <string name="email">邮箱</string>
     <string name="summary">简介</string>
     <string name="log_off">注销账号</string>
     <string name="post">岗位</string>

@@ -3,6 +3,7 @@ package com.cnmar.benxiao.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -91,7 +92,7 @@ public class SupplyManageActivity extends AppCompatActivity {
         tv3.setText(R.string.phone);
         tv4.setText(R.string.contact);
         title.setText(R.string.supply_management);
-        etSearchInput.setHint(R.string.search_by_supply_name);
+        etSearchInput.setHint(R.string.search_by_supply_code);
 //                动态设置单选按钮文本上下左右的图片
         Drawable drawable1 = getResources().getDrawable(R.drawable.company_selected);
         drawable1.setBounds(0, 15, 70, 85);//第一0是距左边距离，第二15是距上边距离，长宽为70
@@ -307,6 +308,19 @@ public class SupplyManageActivity extends AppCompatActivity {
                     context.startActivity(intent);
                 }
             });
+
+            if (!list.get(position).getTel().equals("")) {
+                holder.column3.setTextColor(getResources().getColor(R.color.colorBase));
+                holder.column3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+//                   点击电话，跳转到拨号界面
+                        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + list.get(position).getTel()));
+                        context.startActivity(intent);
+                    }
+                });
+            }
+
             return convertView;
         }
 

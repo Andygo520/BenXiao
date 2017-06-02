@@ -1,8 +1,8 @@
 package component.system.model;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.Date;
+
+import com.alibaba.fastjson.annotation.JSONField;
 
 import component.system.vo.LogModuleVo;
 import component.system.vo.LogOperateVo;
@@ -19,7 +19,7 @@ public class SystemLog {
 	private String module;
 	@JSONField(ordinal = 5)
 	private String content;
-	@JSONField(ordinal = 6, format = "yyyy-MM-dd")
+	@JSONField(ordinal = 6, format = "yyyy-MM-dd HH:mm:ss")
 	private Date ctime;
 
 	public SystemLog() {
@@ -82,10 +82,12 @@ public class SystemLog {
 		this.ctime = ctime;
 	}
 
+	@JSONField(serialize = false)
 	public LogOperateVo getLogOperateVo() {
 		return LogOperateVo.getInstance(operate);
 	}
 
+	@JSONField(serialize = false)
 	public LogModuleVo getLogModuleVo() {
 		return LogModuleVo.getInstance(module);
 	}

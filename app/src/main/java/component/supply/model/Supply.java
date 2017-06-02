@@ -8,9 +8,9 @@ import component.common.model.BaseModel;
 public class Supply extends BaseModel {
 
 	@JSONField(ordinal = 1)
-	private String code; // 供应商编码
+	private String code; // 编码
 	@JSONField(ordinal = 2)
-	private String name; // 供应商名称
+	private String name; // 名称
 	@JSONField(ordinal = 3)
 	private String tel; // 电话
 	@JSONField(ordinal = 4)

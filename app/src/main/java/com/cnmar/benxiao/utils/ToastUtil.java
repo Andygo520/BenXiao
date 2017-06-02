@@ -3,10 +3,6 @@ package com.cnmar.benxiao.utils;
 import android.content.Context;
 import android.widget.Toast;
 
-/**
- * Created by jingbin on 2016/12/14.
- * 单例Toast
- */
 
 public class ToastUtil {
 

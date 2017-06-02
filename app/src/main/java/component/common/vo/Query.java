@@ -9,20 +9,21 @@ public class Query implements Cloneable {
 	private String username;
 	private String name;
 	private String code;
-	private String supplyCode;
+	private String number;
 
 	private int pid;
 
 	private Boolean isEnable;
 
 	private Integer type;
-	private Integer status;
 	private Integer stockType;
-	private Integer mixType;
 	private Integer packType;
+
 	private Integer categoryId;
 	private Integer deptId;
 	private Integer userId;
+
+	private Integer status;
 	private Integer auditStatus;
 
 	private Date sdate;
@@ -39,8 +40,8 @@ public class Query implements Cloneable {
 		if (StringUtils.isNotEmpty(clone.getCode())) {
 			clone.setCode("%" + clone.getCode().trim() + "%");
 		}
-		if (StringUtils.isNotEmpty(clone.getSupplyCode())) {
-			clone.setSupplyCode("%" + clone.getSupplyCode().trim() + "%");
+		if (StringUtils.isNotEmpty(clone.getNumber())) {
+			clone.setNumber("%" + clone.getNumber().trim() + "%");
 		}
 		return clone;
 	}
@@ -69,12 +70,12 @@ public class Query implements Cloneable {
 		this.code = code;
 	}
 
-	public String getSupplyCode() {
-		return supplyCode;
+	public String getNumber() {
+		return number;
 	}
 
-	public void setSupplyCode(String supplyCode) {
-		this.supplyCode = supplyCode;
+	public void setNumber(String number) {
+		this.number = number;
 	}
 
 	public int getPid() {
@@ -101,28 +102,12 @@ public class Query implements Cloneable {
 		this.type = type;
 	}
 
-	public Integer getStatus() {
-		return status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
 	public Integer getStockType() {
 		return stockType;
 	}
 
 	public void setStockType(Integer stockType) {
 		this.stockType = stockType;
-	}
-
-	public Integer getMixType() {
-		return mixType;
-	}
-
-	public void setMixType(Integer mixType) {
-		this.mixType = mixType;
 	}
 
 	public Integer getPackType() {
@@ -155,6 +140,14 @@ public class Query implements Cloneable {
 
 	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 
 	public Integer getAuditStatus() {
