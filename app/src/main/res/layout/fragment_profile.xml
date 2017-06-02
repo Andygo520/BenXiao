@@ -53,7 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="账号"
+                    android:text="@string/account"
                     android:textColor="@color/color_black"
                     android:textSize="17sp" />
 
@@ -78,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="部门"
+                    android:text="@string/department"
                     android:textColor="@color/color_black"
                     android:textSize="17sp" />
 
@@ -103,7 +103,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="职务"
+                    android:text="@string/duty"
                     android:textColor="@color/color_black"
                     android:textSize="17sp" />
 
@@ -128,7 +128,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="岗位"
+                    android:text="@string/post"
                     android:textColor="@color/color_black"
                     android:textSize="17sp" />
 
@@ -166,7 +166,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="性别"
+                    android:text="@string/gender"
                     android:textColor="@color/color_black"
                     android:textSize="17sp" />
 
@@ -191,7 +191,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="出生日期"
+                    android:text="@string/birthday"
                     android:textColor="@color/color_black"
                     android:textSize="17sp" />
 
@@ -216,7 +216,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="手机号"
+                    android:text="@string/mobile"
                     android:textColor="@color/color_black"
                     android:textSize="17sp" />
 
@@ -244,7 +244,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/button_bg"
-            android:text="注销账号"
+            android:text="@string/log_off"
             android:textColor="@color/color_white"
             android:textSize="17sp"></Button>
 

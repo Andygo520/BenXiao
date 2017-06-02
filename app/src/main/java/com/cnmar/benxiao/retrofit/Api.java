@@ -23,7 +23,7 @@ public class Api {
             OkHttpClient client = new OkHttpClient.Builder().addInterceptor(logging).build();
             SERVICE = new Retrofit.Builder()
                     .baseUrl(UrlHelper.URL_BASE)
-//                   因为后台用的FastJson解析，所以Retrofit解析用的FastJson
+//                   因为后台用的FastJson解析，所以Retrofit解析json用的FastJson解析库
                     .addConverterFactory(FastJsonConverterFactory.create())
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .client(client)

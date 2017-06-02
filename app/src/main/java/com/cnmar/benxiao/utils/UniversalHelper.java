@@ -8,8 +8,6 @@ import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 import com.lcodecore.tkrefreshlayout.footer.LoadingView;
 import com.lcodecore.tkrefreshlayout.header.progresslayout.ProgressLayout;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -104,16 +102,4 @@ public class UniversalHelper {
         return dateString;
     }
 
-    /**
-     * 中文字符的转码
-     */
-    public static String getUtf8String(String character) {
-        String utf8String= null;
-        try {
-            utf8String = URLEncoder.encode(character,"utf-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return utf8String;
-    }
 }

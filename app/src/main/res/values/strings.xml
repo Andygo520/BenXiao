@@ -166,5 +166,28 @@
     <string name="material_in_order_arrive_date">到货日期</string>
     <string name="material_in_order_status">入库单状态</string>
     <string name="search_by_in_order_no">入库单号查询</string>
+    <string name="birthday">出生日期</string>
+    <string name="gender">性别</string>
+    <string name="icon">头像</string>
+    <string name="user_detail">用户详情</string>
+    <string name="supply">供应商</string>
+    <string name="supply_code">供应商编码</string>
+    <string name="supply_name">供应商名称</string>
+    <string name="phone">电话</string>
+    <string name="contact">联系人</string>
+    <string name="supply_management">供应商管理</string>
+    <string name="search_by_supply_name">供应商名称查询</string>
+    <string name="supply_detail">供应商详情</string>
+    <string name="tax">传真</string>
+    <string name="address">地址</string>
+    <string name="position">职位</string>
+    <string name="mobile">手机号</string>
+    <string name="mailbox">邮箱</string>
+    <string name="summary">简介</string>
+    <string name="log_off">注销账号</string>
+    <string name="post">岗位</string>
+    <string name="duty">职务</string>
+    <string name="department">部门</string>
+    <string name="account">账号</string>
 
 </resources>

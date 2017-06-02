@@ -38,6 +38,9 @@
             android:name=".activity.LoginActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".activity.SystemManageActivity"></activity>
+        <activity android:name=".activity.SystemUserDetailActivity" />
+        <activity android:name=".activity.SupplyManageActivity" />
+        <activity android:name=".activity.SupplyManageDetailActivity" />
     </application>
 
 </manifest>

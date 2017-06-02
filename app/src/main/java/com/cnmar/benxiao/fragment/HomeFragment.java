@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cnmar.benxiao.R;
+import com.cnmar.benxiao.activity.SupplyManageActivity;
 import com.cnmar.benxiao.activity.SystemManageActivity;
 import com.cnmar.benxiao.adapter.OnRecyclerItemClickListener;
 import com.cnmar.benxiao.adapter.RecyclerAdapter;
@@ -123,10 +124,10 @@ public class HomeFragment extends Fragment implements MyItemTouchCallback.OnDrag
 //                        Intent intent3 = new Intent(getActivity(), CompanyManageActivity.class);
 //                        startActivity(intent3);
 //                        break;
-//                    case R.mipmap.xggl:
-//                        Intent intent4 = new Intent(getActivity(), SupplyManageActivity.class);
-//                        startActivity(intent4);
-//                        break;
+                    case R.mipmap.xggl:
+                        Intent intent4 = new Intent(getActivity(), SupplyManageActivity.class);
+                        startActivity(intent4);
+                        break;
                     case R.mipmap.xtgl:
                         Intent intent5 = new Intent(getActivity(), SystemManageActivity.class);
                         startActivity(intent5);

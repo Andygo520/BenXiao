@@ -2,6 +2,7 @@ package com.cnmar.benxiao.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -22,6 +23,7 @@ import android.widget.Toast;
 
 import com.cnmar.benxiao.R;
 import com.cnmar.benxiao._Url;
+import com.cnmar.benxiao.activity.SystemUserDetailActivity;
 import com.cnmar.benxiao.retrofit.Api;
 import com.cnmar.benxiao.retrofit.BaseModel;
 import com.cnmar.benxiao.retrofit.RxHelper;
@@ -312,11 +314,9 @@ public class SystemUserFragment extends Fragment {
             holder.column1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    Intent intent = new Intent(context, SystemUserDetailActivity.class);
-//                    Bundle bundle = new Bundle();
-//                    bundle.putInt("ID", list.get(position).getId());
-//                    intent.putExtras(bundle);
-//                    context.startActivity(intent);
+                    Intent intent = new Intent(context, SystemUserDetailActivity.class);
+                    intent.putExtra("ID", list.get(position).getId());
+                    context.startActivity(intent);
                 }
             });
             return convertView;
