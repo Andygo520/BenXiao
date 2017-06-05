@@ -33,7 +33,7 @@ public abstract class RxSubscriber<T> extends Subscriber<T> {
      * @param context context
      */
     public RxSubscriber(Context context) {
-        this(context, "请稍后...");
+        this(context, "加载中...");
     }
 
     @Override

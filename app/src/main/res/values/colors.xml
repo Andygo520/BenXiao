@@ -10,7 +10,7 @@
     <color name="color_green">#00FF00</color>
     <color name="color_red">#FF0000</color>
     <color name="color_white">#FFFFFF</color>
-    <color name="color_light_green">#C0FF3E</color>
+    <color name="color_light_green">#63D55E</color>
 
     <!-- Camera color -->
     <color name="possible_result_points">#c0ffbd21</color>

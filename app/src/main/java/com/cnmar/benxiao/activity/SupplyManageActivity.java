@@ -122,13 +122,11 @@ public class SupplyManageActivity extends AppCompatActivity {
 //                          当page等于总页数的时候，提示“加载完成”，不能继续上拉加载更多
                         if (page == total) {
                             getSupplyListFromNet("", page);
-                            ToastUtil.showToast(SupplyManageActivity.this, R.string.finish_load_more);
                             //              结束上拉刷新...
                             refreshLayout.finishLoadmore();
                             return;
                         }
                         getSupplyListFromNet("", page);
-                        ToastUtil.showToast(SupplyManageActivity.this, R.string.load_more);
                         // 结束上拉刷新...
                         refreshLayout.finishLoadmore();
                     }

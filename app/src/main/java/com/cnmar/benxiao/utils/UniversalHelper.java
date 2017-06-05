@@ -3,10 +3,10 @@ package com.cnmar.benxiao.utils;
 import android.content.Context;
 
 import com.cnmar.benxiao.R;
+import com.cnmar.benxiao.widget.BottomView;
 import com.cnmar.benxiao.widget.CustomDialog;
+import com.cnmar.benxiao.widget.HeadView;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
-import com.lcodecore.tkrefreshlayout.footer.LoadingView;
-import com.lcodecore.tkrefreshlayout.header.progresslayout.ProgressLayout;
 
 import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
@@ -85,12 +85,12 @@ public class UniversalHelper {
      */
     public static void initRefresh(Context context, TwinklingRefreshLayout refreshLayout) {
 //        设置刷新头部
-        ProgressLayout headerView = new ProgressLayout(context);
-        headerView.setColorSchemeResources(R.color.colorBase);
+        HeadView headerView = new HeadView(context);
         refreshLayout.setHeaderView(headerView);
 //        设置刷新尾部
-        LoadingView loadingView = new LoadingView(context);
+        BottomView loadingView = new BottomView(context);
         refreshLayout.setBottomView(loadingView);
+        refreshLayout.setAutoLoadMore(true);//在底部越界的时候自动切换到加载更多模式
     }
 
     /**

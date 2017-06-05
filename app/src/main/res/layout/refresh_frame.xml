@@ -24,7 +24,8 @@
 
             <TableRow
                 android:id="@+id/list_header_row"
-                android:background="@color/color_light_green">
+                android:background="@color/color_light_green"
+                android:minHeight="40dp">
 
                 <View style="@style/list_item_cell_seperator_layout" />
 
@@ -102,25 +103,26 @@
     <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:tr_enable_loadmore="false"
-        app:tr_head_height="100dp">
+        app:tr_head_height="50dp">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:overScrollMode="never">
 
             <com.cnmar.benxiao.widget.MyListView
                 android:id="@+id/listView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:cacheColorHint="#00000000"
                 android:divider="@color/color_dark_grey"
                 android:dividerHeight="1dip"
                 android:fastScrollEnabled="true"
                 android:focusable="true"
                 android:scrollingCache="true" />
+
         </ScrollView>
     </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
 

@@ -39,7 +39,7 @@
                 android:layout_below="@id/top"
                 android:layout_marginTop="50dp"
                 android:gravity="center"
-                android:text="中国制造业物联网智能系统"
+                android:text="@string/is"
                 android:textColor="@color/color_white"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -52,7 +52,7 @@
                 android:layout_marginBottom="50dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:text="IMS智能制造系统"
+                android:text="@string/ims"
                 android:textColor="#FFD700"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -93,7 +93,7 @@
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@null"
-                    android:hint="请输入账号"
+                    android:hint="@string/input_account"
                     android:inputType="text"
                     android:maxLength="50"
                     android:paddingLeft="5dp"
@@ -138,7 +138,7 @@
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:background="@null"
-                    android:hint="请输入密码"
+                    android:hint="@string/input_password"
                     android:inputType="textPassword"
                     android:maxLength="50"
                     android:paddingLeft="5dp"
@@ -166,7 +166,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="自动登录"
+                    android:text="@string/auto_login"
                     android:textColor="@color/color_dark_grey"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -177,7 +177,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_bg"
-                android:text="登录"
+                android:text="@string/login"
                 android:textColor="@color/color_white"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -195,7 +195,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:gravity="center"
-            android:text="© 2016 上海洲马网络科技有限公司 版权所有"
+            android:text="@string/copyright"
             android:textColor="@android:color/darker_gray"
             android:textSize="15sp" />
     </LinearLayout>

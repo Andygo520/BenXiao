@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">奔霄</string>
+    <string name="app_name">洲马物联</string>
 
     <!--RadioButton-->
     <string name="rbHome">首页</string>
@@ -37,65 +37,6 @@
     <string name="HOME_BBGL">报表管理</string>
     <string name="HOME_BCPCK">半成品仓库</string>
     <string name="HOME_SCGL">生产管理</string>
-
-
-    <!--二级菜单列表的url字段，该字段不会变，用来唯一标示该菜单项-->
-    <string name="system_user_url">system_user/list</string>
-    //用户管理的url字段
-    <string name="system_log_url">system_log/list</string>
-    //操作日志的url字段
-    <string name="company_url">company/list</string>
-    //企业信息的url字段
-    <string name="company_product_url">company_product/list</string>
-    //产品管理的url字段
-    <string name="produce_plan_url">produce_plan/list</string>
-    //加工单的url字段
-    <string name="produce_bom_url">produce_bom/list</string>
-    //子加工单的url字段
-    <string name="material_out_order_receive_url">produce_receive/list</string>
-    //领料单的url字段
-    <string name="custom_deliver_plan_url">custom_deliver_plan/list</string>
-    //交付计划的url字段
-    <string name="material_stock_url">material_stock/list</string>
-    //原料库存的url字段
-    <string name="material_in_order_url">material_in_order/list</string>
-    //原料入库单的url字段
-    <string name="material_out_order_url">material_out_order/list</string>
-    //原料出库单的url字段
-    <string name="material_stock_check_manage_url">material_stock_check_manage/list</string>
-    //原料盘点的url字段
-    <string name="half_stock_url">half_stock/list</string>
-    //半成品库存的url字段
-    <string name="half_in_order_url">half_in_order/list</string>
-    //半成品入库单的url字段
-    <string name="half_out_order_url">half_out_order/list</string>
-    //半成品出库单的url字段
-    <string name="half_stock_check_manage_url">half_stock_check_manage/list</string>
-    //半成品盘点的url字段
-    <string name="product_stock_url">product_stock/list</string>
-    //成品库存的url字段
-    <string name="product_in_order_url">product_in_order/list</string>
-    //成品入库的url字段
-    <string name="product_out_order_url">product_out_order/list</string>
-    //成品出库的url字段
-    <string name="product_stock_check_manage_url">product_stock_check_manage/list</string>
-    //成品盘点的url字段
-    <string name="material_in_order_test_url">material_in_order_test/list</string>
-    //原料检验的url字段
-    <string name="produce_half_test_url">produce_half_test/list</string>//半成品检验的url字段
-    <string name="produce_product_test_url">produce_product_test/list</string>
-    //成品检验的url字段
-    <string name="material_back_url">material_back/list</string>
-    //原料追溯的url字段
-    <string name="product_back_url">product_back/list</string>
-    //成品追溯的url字段
-    <string name="material_report_url">material_report/list</string>
-    //原料报表的url字段
-    <string name="half_report_url">half_report/list</string>
-    //半成品报表的url字段
-    <string name="product_report_url">product_report/list</string>
-    //成品报表的url字段
-
 
     <!--入库单状态-->
     <string name="ALL">状态</string>
@@ -153,9 +94,9 @@
     <string name="system_manage_user_name">姓名</string>
     <string name="system_manage_user_state">账号状态</string>
     <string name="system_manage_user_role">角色</string>
-    <string name="before_search_please_input">请输入内容后再查询</string>
-    <string name="search_by_name">姓名查询</string>
-    <string name="finish_load_more">加载完成</string>
+    <string name="before_search_please_input">请输入查询内容</string>
+    <string name="search_by_name">姓名</string>
+    <string name="finish_load_more">已加载最后一页</string>
     <string name="load_more">已加载更多</string>
     <string name="log_name">姓名</string>
     <string name="log_action">操作</string>
@@ -165,7 +106,7 @@
     <string name="material_in_order_supply_no">供应商编码</string>
     <string name="material_in_order_arrive_date">到货日期</string>
     <string name="material_in_order_status">入库单状态</string>
-    <string name="search_by_in_order_no">入库单号查询</string>
+    <string name="search_by_in_order_no">入库单号</string>
     <string name="birthday">出生日期</string>
     <string name="gender">性别</string>
     <string name="icon">头像</string>
@@ -176,7 +117,7 @@
     <string name="phone">电话</string>
     <string name="contact">联系人</string>
     <string name="supply_management">供应商管理</string>
-    <string name="search_by_supply_code">供应商编码查询</string>
+    <string name="search_by_supply_code">供应商编码</string>
     <string name="supply_detail">供应商详情</string>
     <string name="tax">传真</string>
     <string name="address">地址</string>
@@ -189,5 +130,10 @@
     <string name="duty">职务</string>
     <string name="department">部门</string>
     <string name="account">账号</string>
+    <string name="copyright">© 2018 上海洲马网络科技有限公司 版权所有</string>
+    <string name="login">登录</string>
+    <string name="auto_login">自动登录</string>
+    <string name="ims">IMS智能制造系统</string>
+    <string name="is">中国制造业物联网智能系统</string>
 
 </resources>

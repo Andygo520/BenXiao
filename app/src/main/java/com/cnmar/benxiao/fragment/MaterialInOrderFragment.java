@@ -74,6 +74,7 @@ public class MaterialInOrderFragment extends Fragment {
     MyListView listView;
     @BindView(R.id.refreshLayout)
     TwinklingRefreshLayout refreshLayout;
+
     private int page = 1;    //    page代表显示的是第几页内容，从1开始
     private int total; // 总页数
     private int num = 1; // 第几页
@@ -163,13 +164,11 @@ public class MaterialInOrderFragment extends Fragment {
 //                            当page等于总页数的时候，提示“加载完成”
                         if (page == total) {
                             getInOrderListFromNet("", "", page);
-                            Toast.makeText(getActivity(), R.string.finish_load_more, Toast.LENGTH_SHORT).show();
                             // 结束上拉刷新...
                             refreshLayout.finishLoadmore();
                             return;
                         }
                         getInOrderListFromNet("", "", page);
-                        Toast.makeText(getActivity(), R.string.load_more, Toast.LENGTH_SHORT).show();
                         // 结束上拉刷新...
                         refreshLayout.finishLoadmore();
                     }
@@ -217,18 +216,6 @@ public class MaterialInOrderFragment extends Fragment {
                 }
             }
         });
-    }
-
-    /*
-    * Fragment 从隐藏切换至显示，会调用onHiddenChanged(boolean hidden)方法
-    * */
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-//        Fragment重新显示到最前端中
-        if (!hidden) {
-            getInOrderListFromNet("", "", 1);
-        }
     }
 
     public void getInOrderListFromNet(String query, String status, int page) {

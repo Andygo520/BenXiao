@@ -65,11 +65,12 @@ public class HomeFragment extends Fragment implements MyItemTouchCallback.OnDrag
         map.put(getResources().getString(R.string.HOME_SCGL), R.mipmap.scgl);
 
 //        得到用户拥有的一级菜单、用户id
-        ArrayList<String> menuNameList = (ArrayList<String>) ACache.get(getActivity()).getAsObject("menu");
+        ArrayList<String> menuNameList = new ArrayList<>();
+        menuNameList = (ArrayList<String>) ACache.get(getActivity()).getAsObject("menu");
         userId = SPHelper.getInt(getActivity(), "userId");
 //        存放菜单图片的列表
         List<Integer> menuImageList = new ArrayList<>();
-        if (menuNameList.size() > 0) {
+        if (menuNameList != null && menuNameList.size() > 0) {
             for (String s : menuNameList) {
                 menuImageList.add(map.get(s));
             }
@@ -82,7 +83,7 @@ public class HomeFragment extends Fragment implements MyItemTouchCallback.OnDrag
         if (items != null && id == userId) {
             results.addAll(items);
         } else {
-            if (menuNameList.size() > 0) {
+            if (menuNameList != null && menuNameList.size() > 0) {
                 for (int i = 0; i < menuNameList.size(); i++) {
                     results.add(new Item(menuNameList.get(i), menuImageList.get(i)));
                 }
