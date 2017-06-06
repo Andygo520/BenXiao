@@ -65,6 +65,8 @@ public class SystemLogFragment extends Fragment {
     MyListView listView;
     @BindView(R.id.refreshLayout)
     TwinklingRefreshLayout refreshLayout;
+    @BindView(R.id.tvFinishLoadMore)
+    TextView tvFinishLoadMore;
 
     private int page = 1;    //    page代表显示的是第几页内容，从1开始
     private int total; // 总页数
@@ -107,6 +109,8 @@ public class SystemLogFragment extends Fragment {
                         page = 1;
                         getLogListFromNet("", page);
                         refreshLayout.finishRefreshing();
+                        //                        设置文本提示框不可见
+                        tvFinishLoadMore.setVisibility(View.GONE);
                     }
                 }, 400);
             }
@@ -122,6 +126,8 @@ public class SystemLogFragment extends Fragment {
                             getLogListFromNet("", page);
                             // 结束上拉刷新...
                             refreshLayout.finishLoadmore();
+//                        只在这种情况显示文本提示框
+                            tvFinishLoadMore.setVisibility(View.VISIBLE);
                             return;
                         }
                         getLogListFromNet("", page);
@@ -140,6 +146,9 @@ public class SystemLogFragment extends Fragment {
                         Toast.makeText(getActivity(), R.string.before_search_please_input, Toast.LENGTH_SHORT).show();
                     } else {
                         getLogListFromNet(input, 1);
+                        page = 1;
+//                        设置文本提示框不可见
+                        tvFinishLoadMore.setVisibility(View.GONE);
                     }
                     InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                     if (imm.isActive()) {
@@ -167,6 +176,9 @@ public class SystemLogFragment extends Fragment {
                 if (s.toString().equals("")) {
                     ivDelete.setVisibility(View.GONE);
                     getLogListFromNet("", 1);
+                    page = 1;
+                    //                        设置文本提示框不可见
+                    tvFinishLoadMore.setVisibility(View.GONE);
                 } else {
                     ivDelete.setVisibility(View.VISIBLE);
                 }
@@ -176,7 +188,6 @@ public class SystemLogFragment extends Fragment {
 
     public void getLogListFromNet(String query, int page) {
         String token = UniversalHelper.getToken(_Url.SYSTEM_LOG);
-        Log.d("ssssss", query);
         Api.getDefault().systemLog(query, page, token)
                 .doOnNext(new Action1<BaseModel<ArrayList<SystemLog>>>() {
                     @Override
@@ -237,6 +248,9 @@ public class SystemLogFragment extends Fragment {
                     return;
                 }
                 getLogListFromNet(input, 1);
+                page = 1;
+//                        设置文本提示框不可见
+                tvFinishLoadMore.setVisibility(View.GONE);
                 break;
         }
     }

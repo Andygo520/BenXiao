@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,7 +67,8 @@ public class SystemUserFragment extends Fragment {
     MyListView listView;
     @BindView(R.id.refreshLayout)
     TwinklingRefreshLayout refreshLayout;
-
+    @BindView(R.id.tvFinishLoadMore)
+    TextView tvFinishLoadMore;
 
     private int page = 1;    //    page代表显示的是第几页内容，从1开始
     private int total; // 总页数
@@ -109,6 +111,8 @@ public class SystemUserFragment extends Fragment {
                         page = 1;
                         getUserListFromNet("", page);
                         refreshLayout.finishRefreshing();
+//                        设置文本提示框不可见
+                        tvFinishLoadMore.setVisibility(View.GONE);
                     }
                 }, 400);
             }
@@ -119,12 +123,13 @@ public class SystemUserFragment extends Fragment {
                     @Override
                     public void run() {
                         page++;
-//                          当page等于总页数的时候，提示“加载完成”，不能继续上拉加载更多
+//                          当page等于总页数的时候，显示“已加载最后一页”，不能继续上拉加载更多
                         if (page == total) {
                             getUserListFromNet("", page);
                             // 结束上拉刷新...
                             refreshLayout.finishLoadmore();
-
+//                        只在这种情况显示文本提示框
+                            tvFinishLoadMore.setVisibility(View.VISIBLE);
                             return;
                         }
                         getUserListFromNet("", page);
@@ -143,6 +148,9 @@ public class SystemUserFragment extends Fragment {
                         Toast.makeText(getActivity(), R.string.before_search_please_input, Toast.LENGTH_SHORT).show();
                     } else {
                         getUserListFromNet(input, 1);
+                        page = 1;
+                        //                        设置文本提示框不可见
+                        tvFinishLoadMore.setVisibility(View.GONE);
                     }
                     InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                     if (imm.isActive()) {
@@ -170,6 +178,9 @@ public class SystemUserFragment extends Fragment {
                 if (s.toString().equals("")) {
                     ivDelete.setVisibility(View.GONE);
                     getUserListFromNet("", 1);
+                    page = 1;
+//                        设置文本提示框不可见
+                    tvFinishLoadMore.setVisibility(View.GONE);
                 } else {
                     ivDelete.setVisibility(View.VISIBLE);
                 }
@@ -228,7 +239,7 @@ public class SystemUserFragment extends Fragment {
             case R.id.ivDelete:
                 etSearchInput.setText("");
                 break;
-            case R.id.llSearch:
+            case R.id.llSearch: {
                 InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                 if (imm.isActive()) {
                     imm.hideSoftInputFromWindow(view.getApplicationWindowToken(), 0);
@@ -238,8 +249,12 @@ public class SystemUserFragment extends Fragment {
                     Toast.makeText(getActivity(), R.string.before_search_please_input, Toast.LENGTH_SHORT).show();
                     return;
                 }
-                getUserListFromNet(input, page);
-                break;
+                getUserListFromNet(input, 1);
+                page = 1;
+//                        设置文本提示框不可见
+                tvFinishLoadMore.setVisibility(View.GONE);
+            }
+            break;
         }
     }
 

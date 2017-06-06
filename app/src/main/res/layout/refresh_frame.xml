@@ -103,25 +103,44 @@
     <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:tr_enable_loadmore="false"
-        app:tr_head_height="50dp">
+        app:tr_head_height="50dp"
+        app:tr_wave_height="50dp">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:overScrollMode="never">
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:scrollbars="none">
 
-            <com.cnmar.benxiao.widget.MyListView
-                android:id="@+id/listView"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:cacheColorHint="#00000000"
-                android:divider="@color/color_dark_grey"
-                android:dividerHeight="1dip"
-                android:fastScrollEnabled="true"
-                android:focusable="true"
-                android:scrollingCache="true" />
+                android:layout_height="match_parent">
+
+                <com.cnmar.benxiao.widget.MyListView
+                    android:id="@+id/listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@color/color_dark_grey"
+                    android:dividerHeight="1dip"
+                    android:fastScrollEnabled="true"
+                    android:focusable="true"
+                    android:scrollingCache="true" />
+
+                <TextView
+                    android:id="@+id/tvFinishLoadMore"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@id/listView"
+                    android:background="#d5d5d5"
+                    android:gravity="center"
+                    android:text="@string/finish_load_more"
+                    android:textColor="@color/color_black"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
 
         </ScrollView>
     </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>

@@ -45,6 +45,7 @@ import rx.functions.Action1;
 
 public class SupplyManageActivity extends AppCompatActivity {
 
+
     private BillAdapter myAdapter;
     private int page = 1;    //    page代表显示的是第几页内容，从1开始
     private int total; // 总页数
@@ -76,6 +77,8 @@ public class SupplyManageActivity extends AppCompatActivity {
     TwinklingRefreshLayout refreshLayout;
     @BindView(R.id.button)
     Button button;
+    @BindView(R.id.tvFinishLoadMore)
+    TextView tvFinishLoadMore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +112,8 @@ public class SupplyManageActivity extends AppCompatActivity {
                         page = 1;
                         getSupplyListFromNet("", page);
                         refreshLayout.finishRefreshing();
+                        //                        设置文本提示框不可见
+                        tvFinishLoadMore.setVisibility(View.GONE);
                     }
                 }, 400);
             }
@@ -124,6 +129,8 @@ public class SupplyManageActivity extends AppCompatActivity {
                             getSupplyListFromNet("", page);
                             //              结束上拉刷新...
                             refreshLayout.finishLoadmore();
+//                        只在这种情况显示文本提示框
+                            tvFinishLoadMore.setVisibility(View.VISIBLE);
                             return;
                         }
                         getSupplyListFromNet("", page);
@@ -140,8 +147,12 @@ public class SupplyManageActivity extends AppCompatActivity {
                     String input = etSearchInput.getText().toString().trim();
                     if (input.equals("")) {
                         ToastUtil.showToast(SupplyManageActivity.this, R.string.before_search_please_input);
-                    } else
+                    } else {
                         getSupplyListFromNet(input, 1);
+                        page = 1;
+                        //                        设置文本提示框不可见
+                        tvFinishLoadMore.setVisibility(View.GONE);
+                    }
                     InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                     if (imm.isActive()) {
                         imm.hideSoftInputFromWindow(v.getApplicationWindowToken(), 0);
@@ -168,6 +179,9 @@ public class SupplyManageActivity extends AppCompatActivity {
                 if (s.toString().equals("")) {
                     ivDelete.setVisibility(View.GONE);
                     getSupplyListFromNet("", 1);
+                    page = 1;
+                    //                        设置文本提示框不可见
+                    tvFinishLoadMore.setVisibility(View.GONE);
                 } else
                     ivDelete.setVisibility(View.VISIBLE);
             }
@@ -248,6 +262,9 @@ public class SupplyManageActivity extends AppCompatActivity {
                     return;
                 }
                 getSupplyListFromNet(input, 1);
+                page = 1;
+                //                        设置文本提示框不可见
+                tvFinishLoadMore.setVisibility(View.GONE);
                 break;
         }
     }

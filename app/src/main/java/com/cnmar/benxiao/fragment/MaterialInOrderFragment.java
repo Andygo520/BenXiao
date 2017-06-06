@@ -74,6 +74,8 @@ public class MaterialInOrderFragment extends Fragment {
     MyListView listView;
     @BindView(R.id.refreshLayout)
     TwinklingRefreshLayout refreshLayout;
+    @BindView(R.id.tvFinishLoadMore)
+    TextView tvFinishLoadMore;
 
     private int page = 1;    //    page代表显示的是第几页内容，从1开始
     private int total; // 总页数
@@ -133,6 +135,9 @@ public class MaterialInOrderFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 getInOrderListFromNet("", String.valueOf(map.get(status[position])), 1);
+                page = 1;
+                //                        设置文本提示框不可见
+                tvFinishLoadMore.setVisibility(View.GONE);
             }
 
             @Override
@@ -151,6 +156,8 @@ public class MaterialInOrderFragment extends Fragment {
                         page = 1;
                         getInOrderListFromNet("", "", page);
                         refreshLayout.finishRefreshing();
+                        //                        设置文本提示框不可见
+                        tvFinishLoadMore.setVisibility(View.GONE);
                     }
                 }, 400);
             }
@@ -166,6 +173,8 @@ public class MaterialInOrderFragment extends Fragment {
                             getInOrderListFromNet("", "", page);
                             // 结束上拉刷新...
                             refreshLayout.finishLoadmore();
+//                        只在这种情况显示文本提示框
+                            tvFinishLoadMore.setVisibility(View.VISIBLE);
                             return;
                         }
                         getInOrderListFromNet("", "", page);
@@ -184,6 +193,9 @@ public class MaterialInOrderFragment extends Fragment {
                         Toast.makeText(getActivity(), R.string.before_search_please_input, Toast.LENGTH_SHORT).show();
                     } else {
                         getInOrderListFromNet(input, "", 1);
+                        page = 1;
+//                        设置文本提示框不可见
+                        tvFinishLoadMore.setVisibility(View.GONE);
                     }
                     InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                     if (imm.isActive()) {
@@ -211,6 +223,9 @@ public class MaterialInOrderFragment extends Fragment {
                 if (s.toString().equals("")) {
                     ivDelete.setVisibility(View.GONE);
                     getInOrderListFromNet("", "", 1);
+                    page = 1;
+//                        设置文本提示框不可见
+                    tvFinishLoadMore.setVisibility(View.GONE);
                 } else {
                     ivDelete.setVisibility(View.VISIBLE);
                 }
@@ -280,6 +295,9 @@ public class MaterialInOrderFragment extends Fragment {
                     return;
                 }
                 getInOrderListFromNet(input, "", 1);
+                page = 1;
+//                        设置文本提示框不可见
+                tvFinishLoadMore.setVisibility(View.GONE);
                 break;
         }
     }
